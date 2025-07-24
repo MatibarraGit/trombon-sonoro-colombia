@@ -9,24 +9,28 @@ const rhythms = [
     region: 'Costa Atlántica',
     description: 'Ritmo emblemático que nació en la costa caribeña colombiana, fusionando elementos africanos, indígenas y españoles. El trombón aporta profundidad y carácter a esta expresión musical.',
     colorScheme: 'primary' as const,
+    href: '/cumbia',
   },
   {
     title: 'Currulao',
     region: 'Costa Pacífica',
     description: 'Expresión musical del litoral pacífico que combina ancestralidad africana con la sonoridad del trombón, creando un diálogo único entre tradición y modernidad.',
     colorScheme: 'secondary' as const,
+    href: '/currulao',
   },
   {
     title: 'Pasillo y Bambuco',
     region: 'Región Andina',
     description: 'Géneros representativos de la región andina colombiana donde el trombón ha encontrado un espacio especial para expresar la melancolía y alegría de nuestra montaña.',
     colorScheme: 'accent' as const,
+    href: '/pasillo',
   },
   {
     title: 'Joropo',
     region: 'Orinoquía',
     description: 'Música llanera que con la incorporación del trombón ha ganado nuevas dimensiones sonoras, manteniendo la esencia del trabajo y la vida en los llanos orientales.',
     colorScheme: 'colombia-green' as const,
+    href: '/joropo',
   },
 ];
 

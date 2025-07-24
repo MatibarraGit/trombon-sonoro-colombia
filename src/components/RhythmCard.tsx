@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { MapPin, Music, Play } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 interface RhythmCardProps {
   title: string;
@@ -10,6 +11,7 @@ interface RhythmCardProps {
   colorScheme: 'primary' | 'secondary' | 'accent' | 'colombia-green';
   image?: string;
   className?: string;
+  href?: string;
 }
 
 const colorVariants = {
@@ -32,7 +34,8 @@ export function RhythmCard({
   description, 
   colorScheme, 
   image, 
-  className 
+  className,
+  href 
 }: RhythmCardProps) {
   return (
     <Card className={cn(
@@ -70,19 +73,38 @@ export function RhythmCard({
         </CardDescription>
         
         <div className="flex gap-2 pt-2">
-          <Button 
-            size="sm" 
-            className={cn(
-              "flex-1 transition-all duration-200",
-              colorScheme === 'primary' && "bg-primary hover:bg-primary/90",
-              colorScheme === 'secondary' && "bg-secondary hover:bg-secondary/90",
-              colorScheme === 'accent' && "bg-accent hover:bg-accent/90",
-              colorScheme === 'colombia-green' && "bg-colombia-green hover:bg-colombia-green/90"
-            )}
-          >
-            <Music className="mr-2 h-4 w-4" />
-            Explorar
-          </Button>
+          {href ? (
+            <Button 
+              asChild
+              size="sm" 
+              className={cn(
+                "flex-1 transition-all duration-200",
+                colorScheme === 'primary' && "bg-primary hover:bg-primary/90",
+                colorScheme === 'secondary' && "bg-secondary hover:bg-secondary/90",
+                colorScheme === 'accent' && "bg-accent hover:bg-accent/90",
+                colorScheme === 'colombia-green' && "bg-colombia-green hover:bg-colombia-green/90"
+              )}
+            >
+              <Link to={href}>
+                <Music className="mr-2 h-4 w-4" />
+                Explorar
+              </Link>
+            </Button>
+          ) : (
+            <Button 
+              size="sm" 
+              className={cn(
+                "flex-1 transition-all duration-200",
+                colorScheme === 'primary' && "bg-primary hover:bg-primary/90",
+                colorScheme === 'secondary' && "bg-secondary hover:bg-secondary/90",
+                colorScheme === 'accent' && "bg-accent hover:bg-accent/90",
+                colorScheme === 'colombia-green' && "bg-colombia-green hover:bg-colombia-green/90"
+              )}
+            >
+              <Music className="mr-2 h-4 w-4" />
+              Explorar
+            </Button>
+          )}
           
           <Button 
             variant="outline" 
