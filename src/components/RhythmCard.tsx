@@ -78,7 +78,7 @@ export function RhythmCard({
               asChild
               size="sm" 
               className={cn(
-                "flex-1 transition-all duration-200",
+                "flex-1 transition-all duration-200 text-white",
                 colorScheme === 'primary' && "bg-primary hover:bg-primary/90",
                 colorScheme === 'secondary' && "bg-secondary hover:bg-secondary/90",
                 colorScheme === 'accent' && "bg-accent hover:bg-accent/90",
@@ -105,14 +105,6 @@ export function RhythmCard({
               Explorar
             </Button>
           )}
-          
-          <Button 
-            variant="outline" 
-            size="sm"
-            className="transition-all duration-200 hover:bg-muted"
-          >
-            <Play className="h-4 w-4" />
-          </Button>
         </div>
       </CardContent>
     </Card>

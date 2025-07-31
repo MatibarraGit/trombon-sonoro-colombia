@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Music, MapPin, Clock, BookOpen, Images, Download, Menu, X } from 'lucide-react';
+import { Home, MapPin, Clock, BookOpen, Music4, Images, Download, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -9,13 +9,14 @@ interface NavigationProps {
 }
 
 const navigationItems = [
-  { id: 'inicio', label: 'Inicio', icon: Music, href: '/' },
+  { id: 'inicio', label: 'Inicio', icon: Home, href: '/' },
+  { id: 'metodologia', label: 'Metodología', icon: BookOpen, href: '/metodologia' },
+  { id: 'timeline', label: 'Historia', icon: Clock, href: '/historia' },
   { id: 'cumbia', label: 'Cumbia', icon: MapPin, href: '/cumbia' },
   { id: 'currulao', label: 'Currulao', icon: MapPin, href: '/currulao' },
   { id: 'pasillo', label: 'Pasillo & Bambuco', icon: MapPin, href: '/pasillo' },
   { id: 'joropo', label: 'Joropo', icon: MapPin, href: '/joropo' },
-  { id: 'timeline', label: 'Historia', icon: Clock, href: '/historia' },
-  { id: 'metodologia', label: 'Metodología', icon: BookOpen, href: '/metodologia' },
+  { id: 'obra', label: 'Obra', icon: Music4, href: '/obra' },
   { id: 'galeria', label: 'Galería', icon: Images, href: '/galeria' },
   { id: 'recursos', label: 'Recursos', icon: Download, href: '/recursos' },
 ];

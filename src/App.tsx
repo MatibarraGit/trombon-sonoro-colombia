@@ -5,12 +5,14 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Metodologia from "./pages/Metodologia";
+import Historia from "./pages/Historia";
 import Cumbia from "./pages/Cumbia";
 import Currulao from "./pages/Currulao";
 import Pasillo from "./pages/Pasillo";
 import Joropo from "./pages/Joropo";
-import Historia from "./pages/Historia";
-import Metodologia from "./pages/Metodologia";
+import Obra from "./pages/Obra";
+import { Navigation } from "./components/Navigation";
 
 const queryClient = new QueryClient();
 
@@ -20,14 +22,16 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Navigation />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/metodologia" element={<Metodologia />} />
+          <Route path="/historia" element={<Historia />} />
           <Route path="/cumbia" element={<Cumbia />} />
           <Route path="/currulao" element={<Currulao />} />
           <Route path="/pasillo" element={<Pasillo />} />
           <Route path="/joropo" element={<Joropo />} />
-          <Route path="/historia" element={<Historia />} />
-          <Route path="/metodologia" element={<Metodologia />} />
+          <Route path="/obra" element={<Obra />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

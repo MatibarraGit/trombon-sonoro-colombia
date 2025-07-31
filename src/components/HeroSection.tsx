@@ -1,10 +1,19 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Play, Music } from 'lucide-react';
 import heroImage from '@/assets/hero-trombone-colombia.jpg';
 
 export function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
+  const rhythmsElement = document.getElementById('RhythmsSection');
+
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate(`/obra`);
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -14,6 +23,11 @@ export function HeroSection() {
 
   const scrollToContent = () => {
     window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+  };
+
+  const scrollToRythms = () => {
+    // rhythmsElement.scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({ top: rhythmsElement.offsetTop, behavior: 'smooth' });
   };
 
   return (
@@ -46,6 +60,7 @@ export function HeroSection() {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              onClick={scrollToRythms}
             >
               <Music className="mr-2 h-5 w-5" />
               Explorar Ritmos
@@ -55,6 +70,7 @@ export function HeroSection() {
               variant="outline" 
               size="lg"
               className="bg-white/10 border-white/30 text-white hover:bg-white/20 px-8 py-4 text-lg backdrop-blur-sm"
+              onClick={handleRedirect}
             >
               <Play className="mr-2 h-5 w-5" />
               Escuchar Muestra

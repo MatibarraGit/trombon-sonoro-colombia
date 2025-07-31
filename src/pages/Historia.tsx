@@ -1,43 +1,49 @@
-import { Navigation } from '@/components/Navigation';
+import { Clock, MapPin, User, Music } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Clock, MapPin, User, Music } from 'lucide-react';
 
 const Historia = () => {
   const timelineEvents = [
     {
-      year: "1450-1600",
+      year: "XV",
       title: "Orígenes Europeos del Trombón",
-      description: "Desarrollo del trombón en Europa como evolución del sacabuche. Uso principal en música sacra y cortesana.",
+      description: "Surge el trombón (trompeta de vara evolucionada). Se le conoce como “sackbut” (Inglaterra), “sacabuche” (España), entre otros. Es el único instrumento de viento-metal capaz de producir glisados naturales.",
       category: "Origen",
       region: "Europa"
     },
     {
-      year: "1700-1800", 
+      year: "XV - XVI", 
+      title: "Época precolombina",
+      description: "Los pueblos indígenas de Colombia ya utilizan la música con funciones sociales y religiosas.",
+      category: "Cultura indígena",
+      region: "Colombia"
+    },
+    {
+      year: "XVI", 
       title: "Llegada a las Américas",
-      description: "El trombón llega al continente americano a través de las expediciones coloniales españolas y las misiones religiosas.",
+      description: "El trombón llega al continente americano a través de las expediciones coloniales españolas y las misiones religiosas. Comienza el mestizaje cultural entre indígenas, africanos y europeos. El folclor colombiano empieza a formarse a partir de esta mezcla.",
       category: "Colonización",
       region: "América"
     },
     {
-      year: "1810-1860",
-      title: "Bandas Militares en Colombia",
-      description: "Establecimiento de las primeras bandas militares en territorio colombiano. El trombón se integra en marchas y música ceremonial.",
-      category: "Militar",
+      year: "XVII - XVIII",
+      title: "Incorporación del Trombón",
+      description: "El trombón se usa en música religiosa y pequeños ensambles durante el Barroco. Se convierte en parte de la orquesta teatral durante el Clasicismo, hacia fines del siglo XVIII.",
+      category: "Adaptación",
       region: "Colombia"
     },
     {
-      year: "1880-1920",
-      title: "Bandas Municipales",
-      description: "Proliferación de bandas municipales en pueblos colombianos. Primera integración del trombón en géneros folclóricos.",
-      category: "Folclórico",
+      year: "XIX",
+      title: "Los ritmos tradicionales colombianos",
+      description: "Empiezan a proliferar los ritmos como la cumbia y currulao en la costa atlántica y pacífica, el bambuco y pasillo en la región andina, y el joropo en la Orinoquía.",
+      category: "Desarrollo",
       region: "Regiones"
     },
     {
-      year: "1950-1980",
-      title: "Integración en el Folclor",
-      description: "Consolidación del trombón en la cumbia, currulao, pasillo y joropo. Desarrollo de técnicas interpretativas específicas.",
-      category: "Modernización",
+      year: "XIX - XX",
+      title: "Dificultades con el Trombón",
+      description: "A pesar de facilitar los pasajes rápidos, los trombones de válvulas caen en desuso por problemas de afinación. Se retoma el uso del trombón de vara, consolidándose en la orquesta como instrumento de referencia (2 tenores y 1 bajo).",
+      category: "Retorno",
       region: "Nacional"
     },
     {
@@ -108,243 +114,155 @@ const Historia = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      
-      <main className="md:ml-72">
-        {/* Hero Section */}
-        <section className="relative h-64 bg-gradient-primary text-white overflow-hidden">
-          <div className="absolute inset-0 bg-black/20" />
-          <div className="relative z-10 h-full flex items-center px-6">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-4">
-                Historia del Trombón en Colombia
-              </h1>
-              <p className="text-xl opacity-90">
-                Un viaje desde Europa hasta el corazón del folclor colombiano
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Content */}
-        <div className="py-16 px-6">
-          <div className="max-w-6xl mx-auto space-y-16">
-            
-            {/* Introduction */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-playfair text-2xl">Introducción y Contexto</CardTitle>
-              </CardHeader>
-              <CardContent className="text-lg leading-relaxed space-y-4">
-                <p>
-                  La historia del trombón en Colombia es un fascinante relato de adaptación cultural 
-                  que se extiende desde los orígenes europeos del instrumento hasta su profunda 
-                  integración en las tradiciones musicales autóctonas. Este proceso, que abarca 
-                  más de cinco siglos, refleja la capacidad de transformación y apropiación 
-                  cultural que caracteriza la identidad musical colombiana.
-                </p>
-                <p>
-                  Desde su llegada durante la época colonial hasta su consolidación como voz 
-                  fundamental en géneros como la cumbia, el currulao, el pasillo y el joropo, 
-                  el trombón ha demostrado una versatilidad excepcional para adaptarse a 
-                  contextos musicales diversos, manteniendo su esencia tímbrica mientras 
-                  abraza nuevas funciones expresivas y sociales.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Timeline */}
-            <section>
-              <h2 className="font-playfair text-3xl font-bold text-center mb-12">
-                Línea de Tiempo Detallada
-              </h2>
-              
-              <div className="space-y-8">
-                {timelineEvents.map((event, index) => (
-                  <Card key={index} className="relative">
-                    <div className="absolute left-0 top-6 w-1 h-16 bg-primary rounded-full" />
-                    <CardHeader className="pl-8">
-                      <div className="flex items-center gap-4 mb-2">
-                        <Badge variant="secondary" className="text-xs">
-                          {event.year}
-                        </Badge>
-                        <Badge variant="outline" className="text-xs">
-                          {event.category}
-                        </Badge>
-                        <div className="flex items-center gap-1 text-muted-foreground text-xs">
-                          <MapPin className="h-3 w-3" />
-                          {event.region}
-                        </div>
-                      </div>
-                      <CardTitle className="font-playfair text-xl">{event.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="pl-8">
-                      <p className="text-muted-foreground leading-relaxed">{event.description}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </section>
-
-            {/* Cultural Areas */}
-            <section>
-              <h2 className="font-playfair text-3xl font-bold text-center mb-12">
-                Áreas Culturales y Adopción Regional
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {culturalAreas.map((area, index) => (
-                  <Card key={index}>
-                    <CardHeader>
-                      <CardTitle className="font-playfair text-xl flex items-center gap-2">
-                        <MapPin className="h-5 w-5 text-primary" />
-                        {area.region}
-                      </CardTitle>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <Clock className="h-4 w-4" />
-                        {area.period}
-                      </div>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="leading-relaxed">{area.description}</p>
-                      <div>
-                        <h4 className="font-semibold mb-2">Géneros Representativos:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {area.characteristics.map((char, charIndex) => (
-                            <Badge key={charIndex} variant="outline" className="text-xs">
-                              {char}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </section>
-
-            {/* Notable Figures */}
-            <section>
-              <h2 className="font-playfair text-3xl font-bold text-center mb-12">
-                Figuras Destacadas
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {notableFigures.map((figure, index) => (
-                  <Card key={index}>
-                    <CardHeader>
-                      <CardTitle className="font-playfair text-xl flex items-center gap-2">
-                        <User className="h-5 w-5 text-primary" />
-                        {figure.name}
-                      </CardTitle>
-                      <div className="flex flex-col gap-1 text-sm text-muted-foreground">
-                        <span>{figure.role}</span>
-                        <span>{figure.period}</span>
-                        <div className="flex items-center gap-1">
-                          <MapPin className="h-3 w-3" />
-                          {figure.region}
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="leading-relaxed">{figure.contribution}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </section>
-
-            {/* Multimedia Section */}
-            <section>
-              <h2 className="font-playfair text-3xl font-bold text-center mb-12">
-                Archivo Multimedia Histórico
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="font-playfair text-lg flex items-center gap-2">
-                      <Music className="h-5 w-5 text-primary" />
-                      Grabaciones Históricas
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="p-3 bg-muted/30 rounded">
-                        <p className="font-medium text-sm">Banda Nacional - 1940</p>
-                        <p className="text-xs text-muted-foreground">Primera grabación de cumbia con trombón</p>
-                      </div>
-                      <div className="p-3 bg-muted/30 rounded">
-                        <p className="font-medium text-sm">Lucho Bermúdez - 1950</p>
-                        <p className="text-xs text-muted-foreground">Colombia tierra querida</p>
-                      </div>
-                      <div className="p-3 bg-muted/30 rounded">
-                        <p className="font-medium text-sm">Los Gaiteros de San Jacinto - 1970</p>
-                        <p className="text-xs text-muted-foreground">Integración moderna del trombón</p>
-                      </div>
-                    </div>
-                    <p className="text-xs text-muted-foreground mt-4 italic">
-                      * Los archivos de audio serán incorporados en la versión final
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="font-playfair text-lg">Partituras Históricas</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="p-3 bg-muted/30 rounded">
-                        <p className="font-medium text-sm">Manuscritos S. XIX</p>
-                        <p className="text-xs text-muted-foreground">Primeros arreglos para trombón</p>
-                      </div>
-                      <div className="p-3 bg-muted/30 rounded">
-                        <p className="font-medium text-sm">Colección Biblioteca Nacional</p>
-                        <p className="text-xs text-muted-foreground">Partituras de bandas municipales</p>
-                      </div>
-                      <div className="p-3 bg-muted/30 rounded">
-                        <p className="font-medium text-sm">Archivo Personal Atehortúa</p>
-                        <p className="text-xs text-muted-foreground">Composiciones contemporáneas</p>
-                      </div>
-                    </div>
-                    <p className="text-xs text-muted-foreground mt-4 italic">
-                      * Las imágenes de partituras serán añadidas posteriormente
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="font-playfair text-lg">Fotografías Documentales</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="p-3 bg-muted/30 rounded">
-                        <p className="font-medium text-sm">Bandas Militares 1900</p>
-                        <p className="text-xs text-muted-foreground">Primeros trombonistas en Colombia</p>
-                      </div>
-                      <div className="p-3 bg-muted/30 rounded">
-                        <p className="font-medium text-sm">Festivales Folclóricos</p>
-                        <p className="text-xs text-muted-foreground">Integración en celebraciones</p>
-                      </div>
-                      <div className="p-3 bg-muted/30 rounded">
-                        <p className="font-medium text-sm">Conservatorios S. XX</p>
-                        <p className="text-xs text-muted-foreground">Educación formal del trombón</p>
-                      </div>
-                    </div>
-                    <p className="text-xs text-muted-foreground mt-4 italic">
-                      * Las fotografías históricas serán incorporadas gradualmente
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </section>
+    <main className="min-h-screen md:ml-72">
+      {/* Hero Section */}
+      <section className="relative h-64 bg-gradient-primary text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/20" />
+        <div className="relative z-10 h-full flex items-center px-6">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="font-playfair text-4xl md:text-5xl font-bold mb-4">
+              Historia del Trombón en Colombia
+            </h1>
+            <p className="text-xl opacity-90">
+              Un viaje desde Europa hasta el corazón del folclor colombiano
+            </p>
           </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Content */}
+      <div className="py-16 px-6">
+        <div className="max-w-6xl mx-auto space-y-16">
+          
+          {/* Introduction */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="font-playfair text-2xl">Introducción y Contexto</CardTitle>
+            </CardHeader>
+            <CardContent className="text-lg leading-relaxed space-y-4">
+              <p>
+                El trombón es un instrumento de la familia viento-metal que surgió a finales del
+                siglo XV a partir de la forma de la trompeta de vara. Es el único instrumento de dicha
+                familia que puede producir todo el rango de la serie armónica y el efecto natural
+                glisado.
+              </p>
+
+              <p>
+                Durante el Barroco el trombón fue utilizado en el contexto de la música religiosa y en
+                pequeños ensambles. Su incorporación a la orquesta se dio en el Clasicismo,  hacia
+                finales del siglo XVIII, inicialmente en la orquesta de teatro.
+              </p>
+
+              <p>
+
+              </p>
+            </CardContent>
+          </Card>
+
+          {/* Timeline */}
+          <section>
+            <h2 className="font-playfair text-3xl font-bold text-center mb-12">
+              Línea de Tiempo Detallada
+            </h2>
+            
+            <div className="space-y-8">
+              {timelineEvents.map((event, index) => (
+                <Card key={index} className="relative">
+                  <div className="absolute left-0 top-6 w-1 h-16 bg-primary rounded-full" />
+                  <CardHeader className="pl-8">
+                    <div className="flex items-center gap-4 mb-2">
+                      <Badge variant="secondary" className="text-xs">
+                        Siglo {event.year}
+                      </Badge>
+                      <Badge variant="outline" className="text-xs">
+                        {event.category}
+                      </Badge>
+                      <div className="flex items-center gap-1 text-muted-foreground text-xs">
+                        <MapPin className="h-3 w-3" />
+                        {event.region}
+                      </div>
+                    </div>
+                    <CardTitle className="font-playfair text-xl">{event.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="pl-8">
+                    <p className="text-muted-foreground leading-relaxed">{event.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {/* Cultural Areas */}
+          <section>
+            <h2 className="font-playfair text-3xl font-bold text-center mb-12">
+              Áreas Culturales y Adopción Regional
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {culturalAreas.map((area, index) => (
+                <Card key={index}>
+                  <CardHeader>
+                    <CardTitle className="font-playfair text-xl flex items-center gap-2">
+                      <MapPin className="h-5 w-5 text-primary" />
+                      {area.region}
+                    </CardTitle>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Clock className="h-4 w-4" />
+                      {area.period}
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="leading-relaxed">{area.description}</p>
+                    <div>
+                      <h4 className="font-semibold mb-2">Géneros Representativos:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {area.characteristics.map((char, charIndex) => (
+                          <Badge key={charIndex} variant="outline" className="text-xs">
+                            {char}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {/* Notable Figures */}
+          <section>
+            <h2 className="font-playfair text-3xl font-bold text-center mb-12">
+              Figuras Destacadas
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {notableFigures.map((figure, index) => (
+                <Card key={index}>
+                  <CardHeader>
+                    <CardTitle className="font-playfair text-xl flex items-center gap-2">
+                      <User className="h-5 w-5 text-primary" />
+                      {figure.name}
+                    </CardTitle>
+                    <div className="flex flex-col gap-1 text-sm text-muted-foreground">
+                      <span>{figure.role}</span>
+                      <span>{figure.period}</span>
+                      <div className="flex items-center gap-1">
+                        <MapPin className="h-3 w-3" />
+                        {figure.region}
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="leading-relaxed">{figure.contribution}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </main>
   );
 };
 
