@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AudioPlayer } from '@/components/AudioPlayer';
-import { Button } from '@/components/ui/button';
-import { FileText, Download } from 'lucide-react';
+import { ShowPartitureButton } from '@/components/ShowPartitureButton';
 
 const Obra = () => {
   return (
@@ -32,11 +31,11 @@ const Obra = () => {
               Estructura de la Suite: Tres Movimientos
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1  xl:grid-cols-3 gap-8">
               <Card className="text-center">
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-2xl font-bold text-primary">I</span>
+                  <div className="mx-auto w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
+                    <span className="text-2xl font-bold text-accent">I</span>
                   </div>
                   <CardTitle className="font-playfair text-xl">Confusión</CardTitle>
                 </CardHeader>
@@ -54,19 +53,18 @@ const Obra = () => {
                     progressColor="bg-red-500"
                   />
                   
-                  <div className="pt-2">
-                    <Button variant="outline" size="sm" className="w-full">
-                      <FileText className="mr-2 h-4 w-4" />
-                      Ver partitura (PDF)
-                    </Button>
-                  </div>
+                  <ShowPartitureButton
+                   title="Movimiento I - Confusión"
+                   filePath="/src/assets/SUITE PARA TROMBON Y BANDA opus 1. 1er mov(confusión).pdf"
+                   hoverColorClassName="hover:bg-accent"
+                  />
                 </CardContent>
               </Card>
 
               <Card className="text-center">
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-2xl font-bold text-secondary">II</span>
+                  <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                    <span className="text-2xl font-bold text-primary">II</span>
                   </div>
                   <CardTitle className="font-playfair text-xl">Conciencia</CardTitle>
                 </CardHeader>
@@ -83,20 +81,19 @@ const Obra = () => {
                     compact={true}
                     progressColor="bg-yellow-500"
                   />
-                  
-                  <div className="pt-2">
-                    <Button variant="outline" size="sm" className="w-full">
-                      <FileText className="mr-2 h-4 w-4" />
-                      Ver partitura (PDF)
-                    </Button>
-                  </div>
+
+                  <ShowPartitureButton
+                   title="Movimiento II - Conciencia"
+                   filePath="/src/assets/SUITE PARA TROMBON Y BANDA opus 1. 2do mov.(conciencia).pdf"
+                   hoverColorClassName="hover:bg-primary"
+                  />
                 </CardContent>
               </Card>
 
               <Card className="text-center">
                 <CardHeader>
-                  <div className="mx-auto w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
-                    <span className="text-2xl font-bold text-accent">III</span>
+                  <div className="mx-auto w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+                    <span className="text-2xl font-bold text-secondary">III</span>
                   </div>
                   <CardTitle className="font-playfair text-xl">Renacer</CardTitle>
                 </CardHeader>
@@ -114,12 +111,11 @@ const Obra = () => {
                     progressColor="bg-blue-500"
                   />
                   
-                  <div className="pt-2">
-                    <Button variant="outline" size="sm" className="w-full">
-                      <FileText className="mr-2 h-4 w-4" />
-                      Ver partitura (PDF)
-                    </Button>
-                  </div>
+                  <ShowPartitureButton
+                   title="Movimiento III - Renacer"
+                   filePath="/src/assets/SUITE PARA TROMBON Y BANDA opus1.3er mov (renacer).pdf"
+                   hoverColorClassName="hover:bg-blue-500"
+                  />
                 </CardContent>
               </Card>
             </div>

@@ -7,7 +7,6 @@ import heroImage from '@/assets/hero-trombone-colombia.jpg';
 
 export function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
-  const rhythmsElement = document.getElementById('RhythmsSection');
 
   const navigate = useNavigate();
 
@@ -15,6 +14,7 @@ export function HeroSection() {
     navigate(`/obra`);
   };
 
+  // Manejar el scroll
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
@@ -26,8 +26,10 @@ export function HeroSection() {
   };
 
   const scrollToRythms = () => {
-    // rhythmsElement.scrollIntoView({ behavior: 'smooth' });
-    window.scrollTo({ top: rhythmsElement.offsetTop, behavior: 'smooth' });
+    const rhythmsElement = document.getElementById('RhythmsSection');
+    if (rhythmsElement) {
+      rhythmsElement.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (

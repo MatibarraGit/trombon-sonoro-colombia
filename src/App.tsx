@@ -11,6 +11,7 @@ import Cumbia from "./pages/Cumbia";
 import Currulao from "./pages/Currulao";
 import Pasillo from "./pages/Pasillo";
 import Joropo from "./pages/Joropo";
+import Metodologia from "./pages/Metodologia";
 import Obra from "./pages/Obra";
 import { Navigation } from "./components/Navigation";
 
@@ -25,13 +26,14 @@ const App = () => (
         <Navigation />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/recursos" element={<Recursos />} />
+          <Route path="/metodologia" element={<Metodologia />} />
           <Route path="/historia" element={<Historia />} />
           <Route path="/cumbia" element={<Cumbia />} />
           <Route path="/currulao" element={<Currulao />} />
           <Route path="/pasillo" element={<Pasillo />} />
           <Route path="/joropo" element={<Joropo />} />
           <Route path="/obra" element={<Obra />} />
+          <Route path="/recursos" element={<Recursos />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
