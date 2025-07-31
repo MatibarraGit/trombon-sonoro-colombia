@@ -5,11 +5,19 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { formatTime } from "@/lib/utils";
 
+interface AudioPlayerProps {
+  title: string;
+  description?: string;
+  audioPath: string;
+  compact?: boolean;
+}
+
 export const AudioPlayer = ({
   title,
   description,
-  audioPath
-}) => {
+  audioPath,
+  compact = false
+}: AudioPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -54,6 +62,64 @@ export const AudioPlayer = ({
     }
   };
 
+  if (compact) {
+    return (
+      <div className="bg-muted/30 rounded-lg p-4">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex-1 min-w-0">
+            <h4 className="font-semibold text-sm truncate">
+              {title}
+            </h4>
+            {description && (
+              <p className="text-xs text-muted-foreground truncate">
+                {description}
+              </p>
+            )}
+          </div>
+          <Button
+            size="sm"
+            onClick={togglePlayback}
+            className="rounded-full w-10 h-10 ml-3 flex-shrink-0"
+          >
+            {isPlaying ? (
+              <Pause className="h-4 w-4" />
+            ) : (
+              <Play className="h-4 w-4" />
+            )}
+          </Button>
+        </div>
+
+        {/* Audio Progress Bar */}
+        <div
+          className="w-full bg-secondary rounded-full h-1.5 cursor-pointer relative"
+          onClick={handleProgressClick}
+        >
+          <div
+            className="bg-primary h-1.5 rounded-full transition-all duration-300"
+            style={{
+              width: `${duration > 0 ? (currentTime / duration) * 100 : 0}%`,
+            }}
+          />
+        </div>
+
+        <div className="flex justify-between text-xs text-muted-foreground mt-1">
+          <span>{formatTime(currentTime)}</span>
+          <span>{formatTime(duration)}</span>
+        </div>
+
+        {/* Hidden audio element */}
+        <audio
+          ref={audioRef}
+          src={audioPath}
+          onTimeUpdate={handleTimeUpdate}
+          onLoadedMetadata={handleLoadedMetadata}
+          onEnded={handleEnded}
+          preload="metadata"
+        />
+      </div>
+    );
+  }
+
   return (
     <Card>
       <CardHeader>
@@ -69,9 +135,11 @@ export const AudioPlayer = ({
               <h3 className="font-semibold">
                 {title}
               </h3>
-              <p className="text-sm text-muted-foreground">
-                {description}
-              </p>
+              {description && (
+                <p className="text-sm text-muted-foreground">
+                  {description}
+                </p>
+              )}
             </div>
             <Button
               size="lg"

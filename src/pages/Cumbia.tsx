@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { AudioPlayer } from '@/components/AudioPlayer';
 
 const Cumbia = () => {
   return (
@@ -41,11 +40,6 @@ const Cumbia = () => {
             </CardContent>
           </Card>
 
-          <AudioPlayer 
-            title={"Cumbia con Trombón - Muestra Musical"} 
-            description={"Interpretación tradicional de la Costa Atlántica"} 
-            audioPath={"/src/assets/SUITE PARA TROMBON Y BANDA MOV.2 CONCIENCIA.mp3"}
-          />
 
           {/* Musical Characteristics */}
           <Card>

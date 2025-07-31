@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { AudioPlayer } from '@/components/AudioPlayer';
 import { ComparisonTable } from '@/components/ComparisonTable';
 
 const Pasillo = () => {
@@ -56,12 +55,6 @@ const Pasillo = () => {
             </CardContent>
           </Card>
 
-          {/* Audio Player */}
-          <AudioPlayer
-            title={"Pasillo Andino con Trombón - Muestra Musical"} 
-            description={"Interpretación de la tradición andina colombiana"} 
-            audioPath={"/src/assets/SUITE PARA TROMBON Y BANDA MOV.1 CONFUSION.mp3"}
-          />
 
           {/* Comparison between Pasillo and Bambuco */}
           <Card>

@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { AudioPlayer } from '@/components/AudioPlayer';
 
 const Currulao = () => {
   return (
@@ -53,12 +52,6 @@ const Currulao = () => {
             </CardContent>
           </Card>
 
-          {/* Audio Player */}
-          <AudioPlayer
-            title={"Currulao con Trombón - Muestra Musical"} 
-            description={"Tradición del Pacífico Colombiano"} 
-            audioPath={"/src/assets/SUITE PARA TROMBON Y BANDA MOV.3 RENACER.mp3"}
-          />
 
           {/* Musical Characteristics */}
           <Card>

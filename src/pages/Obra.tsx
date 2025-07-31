@@ -1,4 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { AudioPlayer } from '@/components/AudioPlayer';
+import { Button } from '@/components/ui/button';
+import { FileText, Download } from 'lucide-react';
 
 const Obra = () => {
   return (
@@ -38,7 +41,24 @@ const Obra = () => {
                   <CardTitle className="font-playfair text-xl">Confusión</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Primer movimiento que explora la búsqueda de identidad sonora entre 
+                    tradición y modernidad en el pasillo colombiano.
+                  </p>
                   
+                  <AudioPlayer 
+                    title="Movimiento I - Confusión"
+                    description="Pasillo para trombón y banda"
+                    audioPath="/src/assets/SUITE PARA TROMBON Y BANDA MOV.1 CONFUSION.mp3"
+                    compact={true}
+                  />
+                  
+                  <div className="pt-2">
+                    <Button variant="outline" size="sm" className="w-full">
+                      <FileText className="mr-2 h-4 w-4" />
+                      Ver partitura (PDF)
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -50,7 +70,24 @@ const Obra = () => {
                   <CardTitle className="font-playfair text-xl">Conciencia</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Segundo movimiento que representa el despertar y la claridad 
+                    en la fusión de elementos musicales diversos.
+                  </p>
                   
+                  <AudioPlayer 
+                    title="Movimiento II - Conciencia"
+                    description="Cumbia para trombón y banda"
+                    audioPath="/src/assets/SUITE PARA TROMBON Y BANDA MOV.2 CONCIENCIA.mp3"
+                    compact={true}
+                  />
+                  
+                  <div className="pt-2">
+                    <Button variant="outline" size="sm" className="w-full">
+                      <FileText className="mr-2 h-4 w-4" />
+                      Ver partitura (PDF)
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -62,7 +99,24 @@ const Obra = () => {
                   <CardTitle className="font-playfair text-xl">Renacer</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Movimiento final que simboliza la renovación y transformación 
+                    del folclor tradicional hacia nuevas expresiones.
+                  </p>
                   
+                  <AudioPlayer 
+                    title="Movimiento III - Renacer"
+                    description="Currulao para trombón y banda"
+                    audioPath="/src/assets/SUITE PARA TROMBON Y BANDA MOV.3 RENACER.mp3"
+                    compact={true}
+                  />
+                  
+                  <div className="pt-2">
+                    <Button variant="outline" size="sm" className="w-full">
+                      <FileText className="mr-2 h-4 w-4" />
+                      Ver partitura (PDF)
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>
