@@ -10,13 +10,15 @@ interface AudioPlayerProps {
   description?: string;
   audioPath: string;
   compact?: boolean;
+  progressColor?: string;
 }
 
 export const AudioPlayer = ({
   title,
   description,
   audioPath,
-  compact = false
+  compact = false,
+  progressColor = "bg-primary"
 }: AudioPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -79,7 +81,15 @@ export const AudioPlayer = ({
           <Button
             size="sm"
             onClick={togglePlayback}
-            className="rounded-full w-10 h-10 ml-3 flex-shrink-0"
+            className={`rounded-full w-10 h-10 ml-3 flex-shrink-0 bg-muted hover:bg-muted/80 border-2`}
+            style={{ 
+              borderColor: progressColor === "bg-red-500" ? "#ef4444" : 
+                          progressColor === "bg-yellow-500" ? "#eab308" : 
+                          progressColor === "bg-blue-500" ? "#3b82f6" : "#6366f1",
+              color: progressColor === "bg-red-500" ? "#ef4444" : 
+                     progressColor === "bg-yellow-500" ? "#eab308" : 
+                     progressColor === "bg-blue-500" ? "#3b82f6" : "#6366f1"
+            }}
           >
             {isPlaying ? (
               <Pause className="h-4 w-4" />
@@ -91,11 +101,11 @@ export const AudioPlayer = ({
 
         {/* Audio Progress Bar */}
         <div
-          className="w-full bg-secondary rounded-full h-1.5 cursor-pointer relative"
+          className="w-full bg-muted rounded-full h-1.5 cursor-pointer relative"
           onClick={handleProgressClick}
         >
           <div
-            className="bg-primary h-1.5 rounded-full transition-all duration-300"
+            className={`${progressColor} h-1.5 rounded-full transition-all duration-300`}
             style={{
               width: `${duration > 0 ? (currentTime / duration) * 100 : 0}%`,
             }}
@@ -144,7 +154,15 @@ export const AudioPlayer = ({
             <Button
               size="lg"
               onClick={togglePlayback}
-              className="rounded-full w-14 h-14"
+              className={`rounded-full w-14 h-14 bg-muted hover:bg-muted/80 border-2`}
+              style={{ 
+                borderColor: progressColor === "bg-red-500" ? "#ef4444" : 
+                            progressColor === "bg-yellow-500" ? "#eab308" : 
+                            progressColor === "bg-blue-500" ? "#3b82f6" : "#6366f1",
+                color: progressColor === "bg-red-500" ? "#ef4444" : 
+                       progressColor === "bg-yellow-500" ? "#eab308" : 
+                       progressColor === "bg-blue-500" ? "#3b82f6" : "#6366f1"
+              }}
             >
               {isPlaying ? (
                 <Pause className="h-6 w-6" />
@@ -156,11 +174,11 @@ export const AudioPlayer = ({
 
           {/* Audio Progress Bar */}
           <div
-            className="w-full bg-secondary rounded-full h-2 cursor-pointer relative"
+            className="w-full bg-muted rounded-full h-2 cursor-pointer relative"
             onClick={handleProgressClick}
           >
             <div
-              className="bg-primary h-2 rounded-full transition-all duration-300"
+              className={`${progressColor} h-2 rounded-full transition-all duration-300`}
               style={{
                 width: `${duration > 0 ? (currentTime / duration) * 100 : 0}%`,
               }}

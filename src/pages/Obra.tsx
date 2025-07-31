@@ -51,6 +51,7 @@ const Obra = () => {
                     description="Pasillo para trombón y banda"
                     audioPath="/src/assets/SUITE PARA TROMBON Y BANDA MOV.1 CONFUSION.mp3"
                     compact={true}
+                    progressColor="bg-red-500"
                   />
                   
                   <div className="pt-2">
@@ -80,6 +81,7 @@ const Obra = () => {
                     description="Cumbia para trombón y banda"
                     audioPath="/src/assets/SUITE PARA TROMBON Y BANDA MOV.2 CONCIENCIA.mp3"
                     compact={true}
+                    progressColor="bg-yellow-500"
                   />
                   
                   <div className="pt-2">
@@ -109,6 +111,7 @@ const Obra = () => {
                     description="Currulao para trombón y banda"
                     audioPath="/src/assets/SUITE PARA TROMBON Y BANDA MOV.3 RENACER.mp3"
                     compact={true}
+                    progressColor="bg-blue-500"
                   />
                   
                   <div className="pt-2">
