@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Play, Music } from 'lucide-react';
-import heroImage from '@/assets/hero-trombone-colombia.jpg';
+import heroImage from '/assets/hero-trombone-colombia.jpg';
 
 export function HeroSection() {
   const [scrollY, setScrollY] = useState(0);

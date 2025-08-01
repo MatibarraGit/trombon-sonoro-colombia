@@ -48,14 +48,14 @@ const Obra = () => {
                   <AudioPlayer 
                     title="Movimiento I - Confusión"
                     description="Pasillo para trombón y banda"
-                    audioPath="/src/assets/SUITE PARA TROMBON Y BANDA MOV.1 CONFUSION.mp3"
+                    audioPath="/assets/SUITE PARA TROMBON Y BANDA MOV.1 CONFUSION.mp3"
                     compact={true}
                     progressColor="bg-red-500"
                   />
                   
                   <ShowPartitureButton
                    title="Movimiento I - Confusión"
-                   filePath="/src/assets/SUITE PARA TROMBON Y BANDA opus 1. 1er mov(confusión).pdf"
+                   filePath="/assets/SUITE PARA TROMBON Y BANDA opus 1. 1er mov(confusión).pdf"
                    hoverColorClassName="hover:bg-accent"
                   />
                 </CardContent>
@@ -77,14 +77,14 @@ const Obra = () => {
                   <AudioPlayer 
                     title="Movimiento II - Conciencia"
                     description="Cumbia para trombón y banda"
-                    audioPath="/src/assets/SUITE PARA TROMBON Y BANDA MOV.2 CONCIENCIA.mp3"
+                    audioPath="/assets/SUITE PARA TROMBON Y BANDA MOV.2 CONCIENCIA.mp3"
                     compact={true}
                     progressColor="bg-yellow-500"
                   />
 
                   <ShowPartitureButton
                    title="Movimiento II - Conciencia"
-                   filePath="/src/assets/SUITE PARA TROMBON Y BANDA opus 1. 2do mov.(conciencia).pdf"
+                   filePath="/assets/SUITE PARA TROMBON Y BANDA opus 1. 2do mov.(conciencia).pdf"
                    hoverColorClassName="hover:bg-primary"
                   />
                 </CardContent>
@@ -106,14 +106,14 @@ const Obra = () => {
                   <AudioPlayer 
                     title="Movimiento III - Renacer"
                     description="Currulao para trombón y banda"
-                    audioPath="/src/assets/SUITE PARA TROMBON Y BANDA MOV.3 RENACER.mp3"
+                    audioPath="/assets/SUITE PARA TROMBON Y BANDA MOV.3 RENACER.mp3"
                     compact={true}
                     progressColor="bg-blue-500"
                   />
                   
                   <ShowPartitureButton
                    title="Movimiento III - Renacer"
-                   filePath="/src/assets/SUITE PARA TROMBON Y BANDA opus1.3er mov (renacer).pdf"
+                   filePath="/assets/SUITE PARA TROMBON Y BANDA opus1.3er mov (renacer).pdf"
                    hoverColorClassName="hover:bg-blue-500"
                   />
                 </CardContent>
